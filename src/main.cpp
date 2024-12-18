@@ -1,10 +1,11 @@
 #include <iostream>
-#include "core/App.h"
-
+#include "core/IApp.h"
+#include <memory>
 int main(){
 
-    project25::App app;
-    app.run(); 
+   std::unique_ptr<project25::IApp> app = project25::createApp();
+   
+   app->run();
     
     return 0;
 }

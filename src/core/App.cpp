@@ -1,20 +1,25 @@
 #include <iostream>
-#include "App.h"
-
+#include "IApp.h"
+#include <memory>
 
 namespace project25{
 
-    App::App(){
-        std::cout << "#Constructor#";
-    }
-
-    App::~App(){
-        std::cout << "@Destructor@" ;
-    }
-
-    void App::run() {
+    class App: public IApp{
         
-        std::cout << "Welcome to Project25 \n";
-   
+        public:
+         
+         void run() override {
+
+            std::cout << " Welocme to Project25 \n";
+
+         }
+    };
+
+    std::unique_ptr<IApp> createApp() {
+    
+        return std::make_unique<App>();
+    
     }
+
+
 }
