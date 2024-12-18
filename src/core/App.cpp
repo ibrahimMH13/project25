@@ -10,7 +10,7 @@ namespace project25{
          
          void run() override {
 
-            std::cout << " Welocme to Project25 \n";
+            std::cout << " Welcome to Project25 \n";
 
          }
     };
